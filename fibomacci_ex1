@@ -7,12 +7,12 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	printf("Введите номер члена: ");
+	printf("Введите длину последовательности: ");
 	int n;
 	cin >> n;
-	cout << "1 член: " << 0 << endl;
-	cout << "2 член: " << 1 << endl;
-	int a = 0, b = 1, m = 3, answer;	// b = f(-1) ; a = f(-2) 
+	cout << "0 член: " << 0 << endl;
+	cout << "1 член: " << 1 << endl;
+	int a = 0, b = 1, m = 2, answer;	// b = f(-1) ; a = f(-2) 
 	while (m <= n) {
 		answer = fibonacci(a, b);
 		a = b;
