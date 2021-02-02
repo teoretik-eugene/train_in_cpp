@@ -1,0 +1,43 @@
+/* call by value & call by reference */
+#include <iostream>
+using namespace std;
+
+int cbv(int a, int b);
+int cbr(int* a, int* b);
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int c = 1;
+	int d = 2;
+
+	int g = cbv(c, d);
+	cout << "call by value: " << endl;
+	cout << c << endl;
+	cout << d << endl;
+	cout << g << endl;
+
+	int* c_ref;
+	int* d_ref;
+	c_ref = &c;
+	d_ref = &d;
+
+	int ref = cbr(c_ref, d_ref);
+	cout << "call by reference: " << endl;
+	cout << c << endl;
+	cout << d << endl;
+	cout << ref << endl;
+
+}
+
+int cbv(int a, int b){
+	a = a + 2;
+	b = b + 2;
+	return a + b;
+
+}
+
+int cbr(int *a, int *b) {
+	*a = *a + 2;
+	*b = *b + 2;
+	return (*a) + (*b);
+}
