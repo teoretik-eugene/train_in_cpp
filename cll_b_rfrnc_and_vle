@@ -20,7 +20,7 @@ int main()
 	c_ref = &c;
 	d_ref = &d;
 
-	int ref = cbr(c_ref, d_ref);
+	int ref = cbr(&c, &d);	// или c_ref и d_ref
 	cout << "call by reference: " << endl;
 	cout << c <<'\t'<< d << '\n' <<endl;
 	cout << ref << endl;
