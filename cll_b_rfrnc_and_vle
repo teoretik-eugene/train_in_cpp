@@ -12,8 +12,7 @@ int main()
 
 	int g = cbv(c, d);
 	cout << "call by value: " << endl;
-	cout << c << endl;
-	cout << d << endl;
+	cout << c <<'\t'<< d << '\n' <<endl;
 	cout << g << endl;
 
 	int* c_ref;
@@ -23,10 +22,9 @@ int main()
 
 	int ref = cbr(c_ref, d_ref);
 	cout << "call by reference: " << endl;
-	cout << c << endl;
-	cout << d << endl;
+	cout << c <<'\t'<< d << '\n' <<endl;
 	cout << ref << endl;
-	
+
 	return 0;
 }
 
