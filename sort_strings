@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+
+bool sort_length(const std::string a, const std::string b);
+int main() {
+	setlocale(LC_ALL, "Russian");
+
+	std::vector<std::string> strings;
+	std::cout << "Вводите строки: " << std::endl;
+	std::cout << "Для отказа введите 0" << std::endl;
+	while (true) {
+		std::string word;
+		std::getline(std::cin, word);
+		if (word == "0")
+			break;
+		else
+			strings.push_back(word);
+	}
+	std::cout << std::endl  << "Введенные строки: " << std::endl;
+	for (auto i = strings.begin(); i != strings.end(); i++) {
+		std::cout << *i << ' ';
+	}
+	std::cout << std::endl;
+	std::sort(strings.begin(), strings.end(), sort_length);
+	std::cout << "Отсортированны в порядке возрастания: " << std::endl;
+	for (auto j = strings.begin(); j != strings.end(); j++) {
+		std::cout << *j << ' ';
+	}
+
+	return 0;
+}
+
+bool sort_length(const std::string a, const std::string b) {
+	return a.length() < b.length();
+}
